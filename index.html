@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="BiSTS: A Biphasic Spatial-Temporal Synergy Architecture Improving Separability of Approaching Motion Recognition - Yi Zheng, Mingshuo Xu, Jigen Peng, Haiyang Li, Zewen Wang, and Shigang Yue">
+  <!-- Page description -->
+  <meta name="description" content="BiSTS proposes a compact Biphasic Spatial-Temporal Synergy architecture that improves separability for approaching motion recognition, achieving higher SA and efficient edge inference for collision detection.">
+  <!-- Keywords -->
+  <meta name="keywords" content="Collision Warning, Lobula Giant Movement Detector, Approaching Motion Cues, Spatial-Temporal Motion Pyramid">
+  <!-- Authors -->
+  <meta name="author" content="Yi Zheng, Mingshuo Xu, Jigen Peng, Haiyang Li, Zewen Wang, Shigang Yue">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="BiSTS: A Biphasic Spatial-Temporal Synergy Architecture Improving Separability of Approaching Motion Recognition">
+  <meta name="citation_author" content="Zheng, Yi">
+  <meta name="citation_author" content="Xu, Mingshuo">
+  <meta name="citation_author" content="Peng, Jigen">
+  <meta name="citation_author" content="Li, Haiyang">
+  <meta name="citation_author" content="Wang, Zewen">
+  <meta name="citation_author" content="Yue, Shigang">
+  <!-- <meta name="citation_publication_date" content="2026"> -->
+  <!-- <meta name="citation_conference_title" content="CONFERENCE_NAME"> -->
+  <!-- <meta name="citation_pdf_url" content="static/pdfs/paper.pdf"> -->
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>BiSTS: A Biphasic Spatial-Temporal Synergy Architecture Improving Separability of Approaching Motion Recognition - Yi Zheng, et al. | Academic Research</title>
+  
+  <!-- Favicon and App Icons (disabled). Add empty favicon to stop browser requests -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+  <link rel="shortcut icon" href="data:,">
+  <link rel="apple-touch-icon" href="data:,">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "BiSTS: A Biphasic Spatial-Temporal Synergy Architecture Improving Separability of Approaching Motion Recognition",
+    "description": "BiSTS proposes a compact Biphasic Spatial-Temporal Synergy architecture that improves separability for approaching motion recognition, achieving higher SA and efficient edge inference for collision detection.",
+    "author": [
+      {"@type":"Person","name":"Yi Zheng","affiliation":{"@type":"Organization","name":"School of Arts and Sciences, Guangzhou Maritime University"}},
+      {"@type":"Person","name":"Mingshuo Xu","affiliation":{"@type":"Organization","name":"School of Mathematics and Computing Science, University of Leicester"}},
+      {"@type":"Person","name":"Jigen Peng","affiliation":{"@type":"Organization","name":"Machine Life and Intelligence Research Center, Guangzhou University"}},
+      {"@type":"Person","name":"Haiyang Li","affiliation":{"@type":"Organization","name":"Machine Life and Intelligence Research Center, Guangzhou University"}},
+      {"@type":"Person","name":"Zewen Wang","affiliation":{"@type":"Organization","name":"School of Arts and Sciences, Guangzhou Maritime University"}},
+      {"@type":"Person","name":"Shigang Yue","affiliation":{"@type":"Organization","name":"School of Mathematics and Computing Science, University of Leicester"}}
+    ],
+      "datePublished": "2026-05-22",
+      "publisher": {
+        "@type": "Organization",
+        "name": "arXiv"
+      },
+    "url": "https://mingshuoxu.github.io/LGMD-Benchmark/",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["Collision Warning", "Lobula Giant Movement Detector", "Approaching Motion Cues", "Spatial-Temporal Motion Pyramid"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://mingshuoxu.github.io/LGMD-Benchmark/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Lobula Giant Movement Detector"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Collision Warning"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "INSTITUTION_OR_LAB_NAME",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    <!-- "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico", -->
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <!-- <div class="more-works-container"> -->
+    <!-- <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab"> -->
+      <!-- <i class="fas fa-flask"></i> -->
+      <!-- More Works -->
+      <!-- <i class="fas fa-chevron-down dropdown-arrow"></i> -->
+    <!-- </button> -->
+    <!-- <div class="more-works-dropdown" id="moreWorksDropdown"> -->
+      <!-- <div class="dropdown-header"> -->
+        <!-- <h4>More Works from Our Lab</h4> -->
+        <!-- <button class="close-btn" onclick="toggleMoreWorks()"> -->
+          <!-- <i class="fas fa-times"></i> -->
+        <!-- </button> -->
+      <!-- </div> -->
+      <!-- <div class="works-list"> -->
+        <!-- TODO: Replace with your lab's related works -->
+        <!-- <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank"> -->
+          <!-- <div class="work-info"> -->
+            <!-- TODO: Replace with actual paper title -->
+            <!-- <h5>Paper Title 1</h5> -->
+            <!-- TODO: Replace with brief description -->
+            <!-- <p>Brief description of the work and its main contribution.</p> -->
+            <!-- TODO: Replace with venue and year -->
+            <!-- <span class="work-venue">Conference/Journal 2024</span> -->
+          <!-- </div> -->
+          <!-- <i class="fas fa-external-link-alt"></i> -->
+        <!-- </a> -->
+        <!-- TODO: Add more related works or remove extra items -->
+        <!-- <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank"> -->
+          <!-- <div class="work-info"> -->
+            <!-- <h5>Paper Title 2</h5> -->
+            <!-- <p>Brief description of the work and its main contribution.</p> -->
+            <!-- <span class="work-venue">Conference/Journal 2023</span> -->
+          <!-- </div> -->
+          <!-- <i class="fas fa-external-link-alt"></i> -->
+        <!-- </a> -->
+        <!-- <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank"> -->
+          <!-- <div class="work-info"> -->
+            <!-- <h5>Paper Title 3</h5> -->
+            <!-- <p>Brief description of the work and its main contribution.</p> -->
+            <!-- <span class="work-venue">Conference/Journal 2023</span> -->
+          <!-- </div> -->
+          <!-- <i class="fas fa-external-link-alt"></i> -->
+        <!-- </a> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">
+              BiSTS: A Biphasic Spatial-Temporal Synergy Architecture Improving Separability of Approaching Motion Recognition
+            </h1>
+
+              <div class="is-size-5 publication-authors">
+                <!-- TODO: Replace with your paper authors and their personal links -->
+                <span class="author-block">
+                  <a href="https://jcb.gzmtu.edu.cn/info/1237/1346.htm" target="_blank">Yi Zheng</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://mingshuoxu.github.io/aboutme/" target="_blank">Mingshuo Xu</a><sup>2*</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://maths.gzhu.edu.cn/info/1263/5251.htm" target="_blank">Jigen Peng</a><sup>3</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://maths.gzhu.edu.cn/info/1263/5247.htm" target="_blank">Haiyang Li</a><sup>3</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://jcb.gzmtu.edu.cn/info/1106/1393.htm" target="_blank">Zewen Wang</a><sup>1</sup>, and
+                </span>
+                <span class="author-block">
+                  <a href="https://le.ac.uk/people/shigang-yue" target="_blank">Shigang Yue</a><sup>2</sup>, <em>Senior Member, IEEE</em>
+                </span>
+              </div>
+
+              <div class="is-size-6 publication-authors">
+                <!-- TODO: Replace with your institution and conference/journal info -->
+                <span class="author-block"><sup>1</sup>School of Arts and Sciences, Guangzhou Maritime University, Guangzhou 510725, China</span>
+                <span class="author-block"><sup>2</sup>School of Mathematics and Computing Science, University of Leicester, Leicester LE1 7RH, UK</span>
+                <span class="author-block"><sup>3</sup>Machine Life and Intelligence Research Center, Guangzhou University, Guangzhou 510006, China</span>
+                <!-- TODO: Remove this line if no equal contribution -->
+                <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+
+                  <!-- TODO: Update with your arXiv paper ID -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                    </a>
+                  </span>
+
+                  <!-- TODO: Add your supplementary material PDF or remove this section -->
+                  <span class="link-block">
+                    <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://github.com/MingshuoXu/BiSTS" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                  </span>
+
+                  <!-- TODO: Update with your arXiv paper ID -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                    </a>
+                  </span>
+
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser"> -->
+  <!-- <div class="container is-max-desktop"> -->
+    <!-- <div class="hero-body"> -->
+      <!-- TODO: Replace with your teaser video -->
+      <!-- <video poster="" id="tree" autoplay autoplay muted playsinline loop controls height="100%" preload="metadata"> -->
+        <!-- TODO: Add your video file path here -->
+        <!-- <source src="static/videos/banner_video.mp4" type="video/mp4"> -->
+      <!-- </video> -->
+      <!-- TODO: Replace with your video description -->
+      <!-- <h2 class="subtitle has-text-centered"> -->
+        <!-- Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.  -->
+      <!-- </h2> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </section> -->
+<!-- End teaser video -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Vision-based approaching motion recognition is essential for collision avoidance in resource-constrained robotic and edge systems. Compared with deep feature extraction methods, bio-inspired motion-based models offer a compact and computationally efficient solution. In particular, Lobula Giant Movement Detector (LGMD) models, inspired by the locust visual pathway, have shown strong potential due to their learning-free structure and hardware-friendly computation. Nevertheless, existing LGMD-based models remain vulnerable to non-looming motion patterns and environmental artifacts (i.e., image noise and contrast variations), resulting in missed warnings and false alarms in complex dynamic scenes. To address these challenges, we propose Biphasic Spatial-Temporal Synergy (BiSTS), a compact architecture that jointly exploits short- and long-term spatiotemporal cues to improve motion separability. BiSTS consists of two complementary modules. The Short-Term Spatiotemporal Antagonism (STSA) module with rigorous mathematical foundations suppresses transient non-motion disturbances, while the Long-Term Spatiotemporal Coupling (LTSC) module improves the separability of the approaching pattern under varying contrast conditions. We further build a benchmark by coupling a 3,447 sequence dataset with a separability-oriented metric termed SA, to quantify the response distinction between approaching motion and other patterns. Experiments on an edge device show that BiSTS outperforms state-of-the-art LGMD-based models, with a 51.8\% improvement in SA, while achieving an inference speed of 158.5 FPS and an energy efficiency of 270.2 FPS/W. The proposed framework provides a reliable, efficient, and hardware-friendly baseline for visual collision detection on edge platforms. Code is available at <a href="https://github.com/MingshuoXu/BiSTS" target="_blank">Project Repository</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">BiSTS Architecture</h2>
+      <div id="introduction-carousel" class="carousel results-carousel">
+        <div class="item">
+          <!-- TODO: Replace with your research result images -->
+          <img src="static/images/BiSTS_LGMD_architecture.jpg" 
+               alt="First research result visualization" 
+               loading="lazy"
+               style="display: block; height: 40%; max-height: 600px; width: auto; margin: 0 auto;"/>
+          <!-- TODO: Replace with description of this result -->
+          <h2 class="subtitle has-text-centered">
+            Overall architecture of the proposed Biphasic Spatial-Temporal Synergy Architecture (BiSTS). The framework processes continuous sequential frames through a Temporal Difference layer, followed by two core functional modules: Short-Term Spatiotemporal Antagonism (STSA) and Long-Term Spatiotemporal Coupling (LTSC).
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/EI_layer_comparison.png" 
+               alt="Second research result visualization" 
+               loading="lazy"
+               style="display: block; height: 40%; max-height: 550px; width: auto; margin: 0 auto;"/>
+          <h2 class="subtitle has-text-centered">
+            Visualization of the motion cue integration outputs (S Layer) under varying intensities of Gaussian and Salt & Pepper (S&P) noise. The Peak Signal-to-Noise Ratio (PSNR) values, displayed in the bottom-right corner of each panel, quantify the signal fidelity relative to the ideal, noise-free baseline shown in the top row (Original). The proposed BiSTS architecture consistently achieves the highest PSNR, demonstrating superior noise suppression capabilities while strictly preserving essential structural motion cues.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/LTSC_analysis_results.png" alt="Third research result visualization" loading="lazy" />
+          <h2 class="subtitle has-text-centered">
+          Comparison of neural responses between the BasicLGMD and the proposed BiSTS model across five distinct motion patterns under dark (top) and light (bottom) conditions. Each tested pattern is detailed in three vertically aligned sub-panels. The top sub-panel contrasts the normalized responses of the BasicLGMD (blue dashed line) and BiSTS (orange solid line). The middle sub-panel plots the absolute object size (black line, left y-axis) alongside the target's change in size (red line, right y-axis). The bottom sub-panel illustrates the LTSC mechanism by tracking temporal distinctiveness (green dot-dash line) and spatiotemporal continuity (pink dot-dash line). The yellow shaded regions denote the effective LTSC activation windows.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/theorem.png" 
+               alt="Third research result visualization" 
+               loading="lazy"
+               style="display: block; height: auto; width: auto; margin: 0 auto;"/>
+          <h2 class="subtitle has-text-centered">
+          These theorems analytically validate the robustness of the proposed framework against environmental noise. Mathematically, the baseline BasicLGMD inherently yields E(S) > 0 under Gaussian noise and breaks down under impulsive noise at a remarkably low density threshold. Conversely, the BiSTS model consistently maintains E(S) < 0 regardless of the underlying noise distribution. Consequently, the subsequent rectification operation is theoretically guaranteed to filter out background noise in expectation, maximizing the overall reliability of the detection system.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">LGMD Benchmark</h2>
+
+      <h3 class="title is-4">Overview and SA metric</h3>
+      <div id="introduction-carousel" class="carousel results-carousel">
+        <div class="item">
+          <!-- TODO: Replace with your research result images -->
+          <img src="static/images/LGMD_Benchmark_Dataset.jpg" alt="First research result visualization" loading="lazy"/>
+          <!-- TODO: Replace with description of this result -->
+          <h2 class="subtitle has-text-centered">
+            Overview of the LGMD Benchmark dataset structure. The framework comprises three main modules: Simulation (basic tests), Synthesis (controlled generation), and Real-World scenarios. In the diagram, the ellipses represent the specific foreground motion types (e.g., looming square), while the blue text at the bottom-left of each module indicates the background scenarios. The numbers enclosed in parentheses denote the total number of video sequences in each respective subset. Furthermore, the synthesis pipeline combines foregrounds and backgrounds from respective sources (identified by dashed arrows) to enhance scene diversity.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Separability.png" 
+               alt="Second research result visualization" 
+               loading="lazy"
+               style="display: block; height: 60%; max-height: 400px; width: auto; margin: 0 auto;"/>
+          <h2 class="subtitle has-text-centered">
+            Models of approaching motion recognition cannot enhance their separability or AUC through simple boost/inhibition mechanisms due to a fundamental trade-off between true positive rate and false negative rate. As the left panel illustrates, enhancing responses to approaching motion inadvertently amplifies noise, while suppressing non-target signals weakens the desired motion response. This limitation is clearly reflected in the precision-threshold curves (right panel), where the precision distribution shifts almost horizontally compared to the original, rather than being enhanced. The right-end floating subplot confirms that this shift yields no net improvement in either classification performance (AUC) or separability (SA), ultimately limiting the model's real-world applicability.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/metric_demo.png" 
+               alt="Third research result visualization" 
+               loading="lazy"
+               style="display: block; height: 90%; max-height: 400px; width: auto; margin: 0 auto;"/>
+          <h2 class="subtitle has-text-centered">
+          Illustration of the proposed performance evaluation metric comparing traditional metrics with the defined SA index. The left column displays the temporal responses, Precision-Recall (P-R) curves, and Precision-Threshold relationships for three representative model behaviors. The right column visualizes the geometric definition of the SA metric, calculated based on the Intersection Part (hatched area) and Union Part (pink shaded area) between the actual model response and the Ideal Model (Ground-truth, red dashed line). Model 3 demonstrates optimal performance with an SA of 0.92, indicating high alignment with the ground-truth signal.
+        </h2>
+        </div>
+      </div>
+      
+      <h3 class="title is-4">Videos of benchmark dataset</h3>
+      <div id="dataset-videos-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video1" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/c26.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video2" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/c06.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video3" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/tc12.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video4">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video4" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/ha-dark5.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video5">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video5" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/l-white1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video6">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video6" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/l-pink2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video7">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video7" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/natural-0103_120731-111935_tonemapped-fgr_gray=0.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video8">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video8" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/natural-0383_120917-120301_tonemapped-fgr_gray=255.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video9">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video9" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/c38-red5.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video10">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video10" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/tc05-green2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video11">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video11" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/tc13-dark6.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h3 class="title is-4">Benchmark evaluation</h3>
+      <div id="dataset-images-carousel" class="carousel results-carousel">       
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/comparison1.png" 
+               alt="Third research result visualization" 
+               loading="lazy"
+               style="display: block; height: 100%; max-height: 400px; width: auto; margin: 0 auto;"/>
+          <h2 class="subtitle has-text-centered">
+          Quantitative Comparison of SA Scores Across the LGMD Benchmark Dataset.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- TODO: Replace with your research result images -->
+          <img src="static/images/comparison2.png" 
+               alt="First research result visualization" 
+               loading="lazy"
+               style="display: block; height: 100%; max-height: 400px; width: auto; margin: 0 auto;"/>
+          <!-- TODO: Replace with description of this result -->
+          <h2 class="subtitle has-text-centered">
+            Size, Weight, and Power (SWaP) Analysis on the NVIDIA Jetson AGX Xavier Edge Platform.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light"> -->
+  <!-- <div class="hero-body"> -->
+    <!-- <div class="container"> -->
+      <!-- Paper video. -->
+      <!-- <h2 class="title is-3">Video Presentation</h2> -->
+      <!-- <div class="columns is-centered has-text-centered"> -->
+        <!-- <div class="column is-four-fifths"> -->
+          
+          <!-- <div class="publication-video"> -->
+            <!-- TODO: Replace with your YouTube video ID -->
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+          <!-- </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </section> -->
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Response curves of various computational models</h2>
+      <div id="output-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video1" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/output_looming ball against driving sense_tc05-green2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video2" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/output_looming square against nature scenarios_natural-0079_120619-141033_tonemapped-fgr_gray=255.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video3" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/output_looming ball against static bg_ha-dark1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video4">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video4" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/output_vehicle against driving sense_tc09.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video5">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video5" autoplay muted playsinline loop controls height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/output_pure driving sense_tc10.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/visulize_benchmark_output.png" 
+              alt="Third research result visualization" 
+              loading="lazy"
+              style="display: block; width: auto; margin: 0 auto;"/>
+        <h2 class="subtitle has-text-centered">
+        System response curves of various computational models across synthesized and real-world datasets. Each column represents a distinct testing scenario, from left to right: (1) a synthesized looming ball superimposed on a driving background, (2) a synthesized looming square embedded in a natural woodland scene, (3) a real-world looming colored ball against a static background, (4) a real-world vehicle collision event, and (5) a real-world non-collision driving sequence. The top row displays sample keyframes from the corresponding video sequences. Each row denotes the output response of a specific baseline model, with the bottom row representing our proposed BiSTS model. Red shaded areas indicate the ground-truth time windows of the actual looming or collision events.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+
+<!-- Paper poster -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Poster (Generlized by Google NotebookLLM with Gemini)</h2>
+        <!-- TODO: Replace with your poster PDF -->
+        <iframe src="static/pdfs/BiSTS_Robust_Edge_Vision.pdf" 
+                width="100%" height="760">
+        </iframe>
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{yi2026bists,
+  title={BiSTS: A Biphasic Spatial-Temporal Synergy Architecture Improving Separability of Approaching Motion Recognition},
+  author={Zheng, Yi and Xu, Mingshuo and Peng, Jigen and Li, Haiyang and Wang, Zewen and Yue, Shigang},
+  journal={arXiv preprint arXiv:},
+  year={2026}, <!-- url={https://your-domain.com/your-project-page} -->
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
